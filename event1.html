@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Awesome-events-pvt.Ltd.</title>
+	<link rel="icon" type="image/png" href="logo.jpg">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		body {
+			background-color: #FFFFFF;
+		}
+
+		header {
+			background-color: black;
+			color: white;
+			padding: 20px 40px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: relative;
+			z-index: 10;
+		}
+
+		.logo {
+			height: 100px;
+			width: auto;
+		}
+
+		/* Hamburger icon */
+		.hamburger {
+			display: none;
+			font-size: 30px;
+			cursor: pointer;
+			color: white;
+			z-index: 15;
+		}
+
+		/* Nav styles */
+		nav ul {
+			list-style: none;
+			display: flex;
+			gap: 25px;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav ul li a {
+			text-decoration: none;
+			color: white;
+			font-weight: 500;
+			transition: color 0.3s ease;
+		}
+
+		nav ul li a:hover {
+			color: #f39c12;
+		}
+
+		/* Responsive Styles */
+		@media (max-width: 768px) {
+			.hamburger {
+				display: block;
+			}
+
+			nav {
+				position: absolute;
+				top: 100%;
+				right: 0;
+				background-color: #2c3e50;
+				width: 100%;
+				display: none;
+				transition: all 0.3s ease;
+			}
+
+			nav.show {
+				display: block;
+			}
+
+			nav ul {
+				flex-direction: column;
+				align-items: center;
+				gap: 15px;
+				padding: 20px 0;
+			}
+		}
+
+		/* Card container styles */
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 40px;
+}
+
+.card {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border: 2px solid gold;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Add hover effect to change background and scale the card */
+.card:hover {
+	background-color: #f39c12; /* Change this to any color you prefer */
+	transform: scale(1.05); /* Slight zoom effect */
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card h2 {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 10px;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+	.cards-container {
+		grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+		padding: 20px;
+	}
+
+	.card {
+		height: 150px; /* Adjust card height for smaller screens */
+	}
+
+	.card:hover {
+		transform: scale(1.02); /* Reduce the zoom effect on smaller screens */
+	}
+}
+
+@media (max-width: 480px) {
+	.cards-container {
+		grid-template-columns: 1fr; /* Single column on very small screens */
+	}
+
+	.card {
+		height: 130px; /* Adjust card height for very small screens */
+	}
+}
+
+		.footer {
+    background-color: black;
+    border-top: 2px solid limegreen;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* Footer Logo Section */
+.footer-logo {
+    flex: 1 1 250px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    max-width: 100px;
+}
+
+.footer-logo h3 {
+    font-size: 24px;
+    margin: 10px 0 5px;
+}
+
+.footer-logo p {
+    font-size: 16px;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Contact Us Section */
+.footer-links {
+    flex: 1 1 250px;
+    padding: 10px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #f1f1f1;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.footer-links i {
+    color: #3498db;
+}
+
+.footer-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00aced;
+}
+
+/* Social Media Section */
+.footer-social {
+    flex: 1 1 250px;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-social h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #f1f1f1;
+}
+
+.footer-social .social-icon {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+    color: #3498db;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #34495e;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+	</style>
+</head>
+<body>
+	<!-- This is the header section -->
+	<header>
+		<img src="logo.jpg" alt="Awesome event logo" class="logo">
+		<div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+		<nav id="navMenu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html">About</a></li>
+				<li><a href="index.html">Events</a></li>
+				<li><a href="index.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Heading Section -->
+	<section>
+		<h1 style="text-align: center; margin-top: 40px;">Welcome to Awesome Events Pvt. Ltd.</h1>
+	</section>
+
+	<!-- Card Section -->
+	<section class="cards-container">
+		<div class="card">
+			<img src="image1.jpg" alt="Event 1">
+			<h2>Conferences & Seminars</h2>
+		</div>
+		<div class="card">
+			<img src="image2.jpg" alt="Event 2">
+			<h2>Product Launches</h2>
+		</div>
+		<div class="card">
+			<img src="image3.jpg" alt="Event 3">
+			<h2>Corporate Parties</h2>
+		</div>
+		<div class="card">
+			<img src="image4.jpg" alt="Event 4">
+			<h2>Award Ceremonies</h2>
+		</div>
+		<div class="card">
+			<img src="image5.jpg" alt="Event 5">
+			<h2>Trade Shows & Expos</h2>
+		</div>
+		<div class="card">
+			<img src="image6.jpg" alt="Event 6">
+			<h2>Team Building Activities</h2>
+		</div>
+		<div class="card">
+			<img src="image7.jpg" alt="Event 7">
+			<h2>Annual General Meetings (AGMs)</h2>
+		</div>
+		<div class="card">
+			<img src="image8.jpg" alt="Event 8">
+			<h2>Networking Events</h2>
+		</div>
+	</section>
+
+	<script>
+		// JavaScript for hamburger menu toggle
+		function toggleMenu() {
+			const nav = document.getElementById('navMenu');
+			nav.classList.toggle('show');
+		}
+	</script>
+	<footer class="footer" id="contact">
+    <div class="footer-container">
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+            <img src="logo.jpg" alt="Tech Intel Logo" height="60" width="60">
+            <h3>Awesome Events</h3>
+            <p>We Wake Memorable Movements.</p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+              <ul>
+                <li>
+                 <i class="fas fa-phone-alt"></i> 
+                 <a href="tel:+918447716668">+91 84477 16668</a>
+               </li>
+               <li>
+                 <i class="fas fa-envelope"></i> 
+                 <a href="mailto:Awesomeeventpvtltd@gmail.com">Email coming soon</a>
+               </li>
+               <li>
+                 <i class="fas fa-map-marker-alt"></i> 
+                 <a href="https://www.google.com/maps/place/house+no.121b+block+G+ratiya+marg+sangam+vihar,+Delhi,+India+110080" target="_blank">House No. 121B, Block G, Ratiya Marg, Sangam Vihar, Delhi, India 110080</a>
+               </li>
+             </ul>
+        </div>
+       <!-- Social Media -->
+       <div class="footer-social">
+          <h4>Follow Us</h4>
+          <a href="https://www.facebook.com/profile.php?id=61559062886372" class="social-icon" target="_blank">
+             <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/meettarafdar2022/" class="social-icon" target="_blank">
+             <i class="fab fa-instagram"></i>
+          </a>
+       </div>
+
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Awesome Event Pvt Ltd. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
